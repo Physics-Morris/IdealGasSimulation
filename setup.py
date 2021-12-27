@@ -1,6 +1,6 @@
 from setuptools import find_packages, setup
 setup(
-    name='molecular-dynamics-engine',
+    name='MDEngine',
     packages=find_packages(),
     version='1.0',
     description='A simple molecular dynamics engine',
