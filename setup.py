@@ -6,6 +6,6 @@ setup(
     description='A simple molecular dynamics engine',
     author='Morris',
     license='MIT',
-    install_requires=['numpy', 'scipy', 'matplotlib', 'pylab', 'jupyter',
+    install_requires=['numpy', 'scipy', 'matplotlib', 'jupyter',
                       'scipy', 'tqdm']
 )
