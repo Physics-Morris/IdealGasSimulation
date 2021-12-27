@@ -127,20 +127,13 @@ class box:
                     [self.particles[j].vx, self.particles[j].vy] = vj - q / mj
                     break
 
-    def move(self):
-        #> find optimal dt
-        v = []
-        for i in range(len(self.particles)):
-            v.append(np.sqrt(self.particles[i].vx**2 + self.particles[i].vy**2))
-        dt = max(self.L, self.W) / spatial_res / max(v)
-
+    def move(self, dt):
         #> move particles
         for i in range(len(self.particles)):
             self.particles[i].x += self.particles[i].vx * dt
             self.particles[i].y += self.particles[i].vy * dt
         
         self.time += dt
-        return dt
 
     def wall(self):
         delta_P = 0
@@ -184,12 +177,18 @@ class box:
         self.vy.append(vy)
 
     def start(self, step):
+        #> find optimal dt
+        v = []
+        for i in range(len(self.particles)):
+            v.append(np.sqrt(self.particles[i].vx**2 + self.particles[i].vy**2))
+        dt = max(self.L, self.W) / spatial_res / max(v)
+
         delta_P = 0
         delta_T = 0
         for i in tqdm(range(step)):
             self.store_data()
             self.collide()
-            dt = self.move()
+            self.move(dt)
             dp = self.wall()
             Mom, E, Temperature, params = self.measure()
             self.Momentum.append(Mom)
