@@ -4,7 +4,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/Physics-Morris/IdealGasSimulation">
-    <img src="https://github.com/Physics-Morris/IdealGasSimulation/blob/main/uniform_final.png" alt="Logo" width="150">
+    <img src="https://github.com/Physics-Morris/IdealGasSimulation/blob/main/uniform_final.png" alt="Logo" width="250">
   </a>
 
   <h3 align="center">Ideal Gas Simulation</h3>
